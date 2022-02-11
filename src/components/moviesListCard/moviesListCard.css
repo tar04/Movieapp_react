@@ -1,0 +1,34 @@
+.movie {
+    display: inline-block;
+    max-width: 250px;
+    box-shadow: 5px 5px 5px 5px #dcd686;
+    padding: 15px;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.movie:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #70ACAD;
+    color: snow;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 15px;
+    opacity: 0.9;
+}
+
+.movie img {
+    width: 250px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
