@@ -1,18 +1,19 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {moviesService} from "../../services";
 
-const initialState = {
-    movies: [],
-    singleMovie: null,
-    statusMovie: null,
-    status: null,
-    error: null
+const initialState={
+    movies:[],
+    status:null,
+    error:null,
+    singleMovie:[],
+    statusMovie:null
 }
 
 export const getMovies = createAsyncThunk(
     "movieSlice/getMovies",
-    async (_, {rejectWithValue}) => {
+    async (_, {dispatch,rejectWithValue}) => {
         try {
+            dispatch(refreshMovie());
             return await moviesService.getAll().then(value => value.results);
         } catch (e) {
             return rejectWithValue(e.message)
@@ -34,6 +35,11 @@ export const getSingleMovie = createAsyncThunk(
 const movieSlice = createSlice({
     name: "movieSlice",
     initialState,
+    reducers:{
+        refreshMovie:(state) => {
+            state.singleMovie=[];
+        }
+    },
     extraReducers: {
         [getMovies.pending]: (state) => {
             state.status = 'pending';
@@ -51,6 +57,7 @@ const movieSlice = createSlice({
             state.statusMovie = 'pending';
         },
         [getSingleMovie.fulfilled]: (state, action) => {
+            state.statusMovie = 'fulfilled';
             state.singleMovie = action.payload;
         }
     }
@@ -58,4 +65,5 @@ const movieSlice = createSlice({
 
 const movieReducer = movieSlice.reducer;
 
+export const {refreshMovie} =movieSlice.actions;
 export default movieReducer;

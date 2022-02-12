@@ -12,12 +12,12 @@ const MoviesList = () => {
     const {movies,error,status} = useSelector(state => state["movieReducer"]);
     
     useEffect(()=>{
-        dispatch(getMovies())
+        dispatch(getMovies());
     },[])
     
     return (
         <div className={"movies"}>
-            {status ==='pending' && <h2>Loading</h2>}
+            {status ==='pending' && <h2>Loading...</h2>}
             {error && <h2>{error}</h2>}
             {movies.map(movie=><MoviesListCard key={movie.id} movie={movie}/>)}
         </div>
