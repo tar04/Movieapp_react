@@ -1,8 +1,9 @@
-import "./movieDetails.css";
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {getSingleMovie} from "../../store";
 import {useParams} from "react-router-dom";
+
+import {getSingleMovie} from "../../store";
+import "./movieDetails.css";
 
 
 const MovieDetails = () => {
