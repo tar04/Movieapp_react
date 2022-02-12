@@ -14,9 +14,10 @@ const Genres = () => {
         dispatch(getGenres())
     },[])
 
+
     return (
         <div className={"genresPage"}>
-            {genres.map(genre=><Genre key={genre.id} genre={genre} />)}
+            {genres.map(genre=><Genre key={genre.id} genre={genre}/>)}
         </div>
     );
 };

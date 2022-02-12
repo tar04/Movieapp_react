@@ -31,3 +31,11 @@
     font-size: 26px;
     color: red;
 }
+
+.loading {
+    position: absolute;
+    z-index: 999;
+    top: 16%;
+    left: 50%;
+    font-size: 20px;
+}

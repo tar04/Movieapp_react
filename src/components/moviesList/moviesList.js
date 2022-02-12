@@ -14,7 +14,7 @@ const MoviesList = () => {
     useEffect(() => {
         dispatch(getMovies({page, genres}));
         window.scrollTo(0, 0);
-    }, [page,genres])
+    }, [page, genres])
 
 
     const prev = () => {
@@ -38,7 +38,7 @@ const MoviesList = () => {
 
     return (
         <div>
-            <div>{status === 'pending' && <h2>Loading...</h2>}</div>
+            {status === 'pending' && <div className="loading"> Loading...</div>}
             <div className={"movies"}>
                 {error && <h2>{error}</h2>}
                 {movies.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
