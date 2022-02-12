@@ -25,6 +25,11 @@
     font-size: 20px;
     color: #70ACAD;
 }
+.form input:focus {
+    outline: none;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #70ACAD;
+}
 
 .form button {
     font-size: 18px;
