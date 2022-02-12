@@ -1,13 +1,33 @@
-.movies{
+.movies {
     display: flex;
     flex-wrap: wrap;
     column-gap: 40px;
     row-gap: 20px;
     justify-content: center;
 }
-.pages{
+
+.pages {
     margin-top: 5%;
     display: flex;
     column-gap: 15px;
     justify-content: center;
+    align-items: center;
+}
+
+.prev, .next {
+    display: flex;
+    column-gap: 15px;
+}
+
+.page {
+    cursor: pointer;
+}
+
+.page:hover {
+    color: #ab3434;
+}
+
+.current {
+    font-size: 26px;
+    color: red;
 }

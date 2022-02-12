@@ -1,17 +1,15 @@
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {Link, useNavigate, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 import {getSingleMovie} from "../../store";
 import "./movieDetails.css";
-import {NotFoundPage} from "../notFoundPage/notFoundPage";
 
 
 const MovieDetails = () => {
 
     const {id} = useParams();
 
-    const navigate = useNavigate();
 
     const dispatch = useDispatch();
 
@@ -21,6 +19,7 @@ const MovieDetails = () => {
 
 
     const {singleMovie, statusMovie} = useSelector(state => state["movieReducer"]);
+
 
     const {
         poster_path,
@@ -36,28 +35,30 @@ const MovieDetails = () => {
     } = singleMovie;
 
 
-
     return (
         <div className={"details"}>
-            {statusMovie === 'rejected' && <h3>Такого фільму не знайдено</h3>}
             {statusMovie === 'pending' && <h2>Loading...</h2>}
-            { singleMovie && (<div className={"top_content"}>
-                <img src={'https://image.tmdb.org/t/p/w500' + poster_path} alt=""/>
-                <div className={"text"}>
-                    <div><h1>{title}</h1>{tagline && <h5>({tagline})</h5>}<h4>Дата виходу в прокат: {release_date}</h4>
+            {statusMovie === 'rejected' ? <h3>Такого фільму не знайдено</h3> : (singleMovie && (
+                <div className={"top_content"}>
+                    <img src={'https://image.tmdb.org/t/p/w500' + poster_path} alt=""/>
+                    <div className={"text"}>
+                        <div><h1>{title}</h1>{tagline && <h5>({tagline})</h5>}<h4>Дата виходу в
+                            прокат: {release_date}</h4>
+                        </div>
+                        <div className={"genres"}>Жанри: {genres && genres.map(genre => genre.name + ', ')}</div>
+                        <div className={"rating"}>Рейтинг фільму(Tmdb):<p>{vote_average}/10</p>,
+                            враховуючи {vote_count} голосів
+                        </div>
+                        <h3>{overview}</h3>
+                        <div>Країни виробники:</div>
+                        <div>{production_countries && production_countries.map(country => country.name)}</div>
+                        <div className={"company_title"}>Компанії виробники:</div>
+                        <div className={"companies"}>{production_companies && production_companies.map(company => <div
+                            key={company.id}>{company.name} </div>)}</div>
                     </div>
-                    <div className={"genres"}>Жанри: {genres && genres.map(genre => genre.name + ', ')}</div>
-                    <div className={"rating"}>Рейтинг фільму(Tmdb):<p>{vote_average}/10</p>,
-                        враховуючи {vote_count} голосів
-                    </div>
-                    <h3>{overview}</h3>
-                    <div>Країни виробники:</div>
-                    <div>{production_countries && production_countries.map(country => country.name)}</div>
-                    <div className={"company_title"}>Компанії виробники:</div>
-                    <div className={"companies"}>{production_companies && production_companies.map(company => <div
-                        key={company.id}>{company.name} </div>)}</div>
-                </div>
-            </div>)}
+                </div>))}
+
+
         </div>
     );
 };
