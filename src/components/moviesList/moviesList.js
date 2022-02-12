@@ -9,11 +9,11 @@ const MoviesList = () => {
     
     const dispatch = useDispatch();
     
-    const {movies,error,status} = useSelector(state => state["movieReducer"]);
+    const {movies,error,status,page,pageCount} = useSelector(state => state["movieReducer"]);
     
     useEffect(()=>{
-        dispatch(getMovies());
-    },[])
+        dispatch(getMovies({page}));
+    },[page])
     
     return (
         <div className={"movies"}>

@@ -6,15 +6,17 @@ const initialState={
     status:null,
     error:null,
     singleMovie:[],
-    statusMovie:null
+    statusMovie:null,
+    page:1,
+    pageCount:500
 }
 
 export const getMovies = createAsyncThunk(
     "movieSlice/getMovies",
-    async (_, {dispatch,rejectWithValue}) => {
+    async ({page}, {dispatch,rejectWithValue}) => {
         try {
             dispatch(refreshMovie());
-            return await moviesService.getAll().then(value => value.results);
+            return await moviesService.getAll(page).then(value => value.results);
         } catch (e) {
             return rejectWithValue(e.message)
         }
