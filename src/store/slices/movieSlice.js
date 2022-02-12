@@ -18,18 +18,18 @@ export const getMovies = createAsyncThunk(
             dispatch(refreshMovie());
             return await moviesService.getAll(page).then(value => value.results);
         } catch (e) {
-            return rejectWithValue(e.message)
+            return rejectWithValue(e.message);
         }
     }
 );
 
 export const getSingleMovie = createAsyncThunk(
     "movieSlice/getSingleMovie",
-    async ({id}) => {
+    async ({id},{rejectWithValue}) => {
         try {
             return await moviesService.getMovieById(id);
         } catch (e) {
-            console.log(e);
+            return rejectWithValue(e.message);
         }
     }
 );
@@ -40,6 +40,12 @@ const movieSlice = createSlice({
     reducers:{
         refreshMovie:(state) => {
             state.singleMovie=[];
+        },
+        prevPage:(state) => {
+            state.page=--state.page;
+        },
+        nextPage:(state) => {
+            state.page=++state.page;
         }
     },
     extraReducers: {
@@ -61,11 +67,14 @@ const movieSlice = createSlice({
         [getSingleMovie.fulfilled]: (state, action) => {
             state.statusMovie = 'fulfilled';
             state.singleMovie = action.payload;
+        },
+        [getSingleMovie.rejected]: (state, action) => {
+            state.statusMovie = 'rejected';
         }
     }
 });
 
 const movieReducer = movieSlice.reducer;
 
-export const {refreshMovie} =movieSlice.actions;
+export const {refreshMovie,prevPage,nextPage} =movieSlice.actions;
 export default movieReducer;

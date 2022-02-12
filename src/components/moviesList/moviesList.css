@@ -5,3 +5,9 @@
     row-gap: 20px;
     justify-content: center;
 }
+.pages{
+    margin-top: 5%;
+    display: flex;
+    column-gap: 15px;
+    justify-content: center;
+}

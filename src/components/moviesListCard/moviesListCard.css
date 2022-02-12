@@ -28,7 +28,23 @@
 }
 
 .title {
+    padding: 10px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+}
+
+.ratings_high {
+    margin-left: 5px;
+    padding: 4px;
+    color: gold;
+    border-radius: 5px;
+    background-color: #70ACAD;
+}
+.ratings_low{
+    margin-left: 5px;
+    padding: 4px;
+    color: #d22433;
+    border-radius: 5px;
+    background-color: #70ACAD;
 }
