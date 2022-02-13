@@ -36,7 +36,7 @@ const MovieDetails = () => {
             {statusMovie === "pending" && <h2>Loading...</h2>}
             {statusMovie === "rejected" ? <h3>Такого фільму не знайдено</h3> : (singleMovie && (
                 <div className={"top_content"}>
-                    <img src={"https://image.tmdb.org/t/p/w500" + poster_path}/>
+                    {poster_path && (<img src={"https://image.tmdb.org/t/p/w500" + poster_path} alt={""}/>)}
                     <div className={"text"}>
                         <div><h1 className={"titletext"}>{title}</h1>{tagline &&
                         <h5 className={"tagline"}>({tagline})</h5>}<h4 className={"release-date"}>Дата виходу в
