@@ -3,6 +3,7 @@
     padding: 0;
     font-family: cursive;
     scroll-behavior: smooth;
+    transition: all 0.1s ease-in;
 }
 
 :root {
@@ -32,7 +33,7 @@
 }
 
 
-/*:root {
+[data-theme="dark"] {
     --main-blue: #014b4d;
 
     --text-primary: snow;
@@ -56,4 +57,4 @@
     --genre-not-selected: #9edee1;
 
     --text-black:snow;
-}*/
+}

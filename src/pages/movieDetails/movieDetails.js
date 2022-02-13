@@ -42,16 +42,17 @@ const MovieDetails = () => {
                 <div className={"top_content"}>
                     <img src={'https://image.tmdb.org/t/p/w500' + poster_path} alt=""/>
                     <div className={"text"}>
-                        <div><h1>{title}</h1>{tagline && <h5>({tagline})</h5>}<h4>Дата виходу в
+                        <div><h1 className={"titletext"}>{title}</h1>{tagline &&
+                        <h5 className={"tagline"}>({tagline})</h5>}<h4 className={"release-date"}>Дата виходу в
                             прокат: {release_date}</h4>
                         </div>
                         <div className={"genres"}>Жанри: {genres && genres.map(genre => genre.name + ', ')}</div>
                         <div className={"rating"}>Рейтинг фільму(Tmdb):<p>{vote_average}/10</p>,
                             враховуючи {vote_count} голосів
                         </div>
-                        <h3>{overview}</h3>
+                        <h3 className={"overview"}>{overview}</h3>
                         <div>Країни виробники:</div>
-                        <div>{production_countries && production_countries.map(country => country.name+', ')}</div>
+                        <div>{production_countries && production_countries.map(country => country.name + ', ')}</div>
                         <div className={"company_title"}>Компанії виробники:</div>
                         <div className={"companies"}>{production_companies && production_companies.map(company => <div
                             key={company.id}>{company.name} </div>)}</div>

@@ -1,27 +1,37 @@
-.details{
+
+.details {
     margin: auto;
     width: 80%;
     padding: 10% 0;
-    color: var(--text-black);
+
 }
-.top_content{
+
+.top_content {
     display: flex;
     column-gap: 20px;
 }
-.top_content img{
+
+.top_content img {
     height: 100%;
 }
-.rating{
+
+.rating {
     display: flex;
     column-gap: 5px;
 }
 
-.text h3{
+.text div, .text h3, .overview, .titletext, .rating p, .tagline ,.release-date{
+    color: var(--text-black);
+}
+
+.text h3 {
     margin: 3% 0;
 }
-.company_title{
+
+.company_title {
     margin-top: 3%;
 }
-.genres{
+
+.genres {
     margin-top: 20px;
 }
