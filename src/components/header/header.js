@@ -23,7 +23,7 @@ const Header = () => {
             </Link>
             <div className={"user"}>
                 <img className={"user_picture"} src={require("./user-picture.png")} alt={username}/>
-                <p>Вітаю, {username}</p>
+                <p>Вітаю, {username ? username: "друже"}</p>
             </div>
         </div>
     );
