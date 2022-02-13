@@ -12,6 +12,7 @@
     column-gap: 15px;
     justify-content: center;
     align-items: center;
+    color: var(--text-black);
 }
 
 .prev, .next {
@@ -24,12 +25,12 @@
 }
 
 .page:hover {
-    color: #ab3434;
+    color: var(--red-page-hover);
 }
 
 .current {
     font-size: 26px;
-    color: red;
+    color: var(--red-page);
 }
 
 .loading {
@@ -38,4 +39,8 @@
     top: 16%;
     left: 50%;
     font-size: 20px;
+}
+
+.loading, .error{
+    color: var(--text-black);
 }

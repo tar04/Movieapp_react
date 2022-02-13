@@ -1,12 +1,12 @@
 .movie {
     display: inline-block;
     max-width: 250px;
-    box-shadow: 5px 5px 5px 5px #dcd686;
+    box-shadow: 5px 5px 5px 5px var(--main-lightorange);
     padding: 15px;
     position: relative;
     cursor: pointer;
     text-decoration: none;
-    color: black;
+    color: var(--text-black);
 }
 
 .movie:hover::after {
@@ -15,8 +15,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #70ACAD;
-    color: snow;
+    background: var(--main-blue);
+    color: var(--text-primary);
     text-align: center;
     font-size: 14px;
     padding: 10px 15px;
@@ -37,14 +37,14 @@
 .ratings_high {
     margin-left: 5px;
     padding: 4px;
-    color: gold;
+    color: var(--gold-price);
     border-radius: 5px;
-    background-color: #70ACAD;
+    background-color: var(--main-blue);
 }
 .ratings_low{
     margin-left: 5px;
     padding: 4px;
-    color: #d22433;
+    color: var(--red-price);
     border-radius: 5px;
-    background-color: #70ACAD;
+    background-color: var(--main-blue);
 }

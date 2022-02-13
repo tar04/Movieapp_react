@@ -1,20 +1,20 @@
 .genre {
-    background-color: #70ACAD;
+    background-color: var(--main-blue);
     margin: 5px;
     padding: 6px;
     border-radius: 20px;
     min-width: 120px;
     text-align: center;
     cursor: pointer;
-    color: snow;
+    color: var(--text-primary);
 }
 .genre_sel{
-    background-color: #096365;
+    background-color: var(--genre-not-selected);
     margin: 5px;
     padding: 6px;
     border-radius: 20px;
     min-width: 120px;
     text-align: center;
     cursor: pointer;
-    color: snow;
+    color: var(--text-primary);
 }

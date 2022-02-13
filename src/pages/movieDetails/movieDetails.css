@@ -2,6 +2,7 @@
     margin: auto;
     width: 80%;
     padding: 10% 0;
+    color: var(--text-black);
 }
 .top_content{
     display: flex;

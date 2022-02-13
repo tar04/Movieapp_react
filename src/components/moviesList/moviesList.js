@@ -45,7 +45,7 @@ const MoviesList = () => {
         <div>
             {status === 'pending' && <div className="loading"> Loading...</div>}
             <div className={"movies"}>
-                {error && <h2>{error}</h2>}
+                {error && <h2 className={"error"}>{error}</h2>}
                 {movies.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
             </div>
             {!error && <div className={"pages"}>

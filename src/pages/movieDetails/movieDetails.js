@@ -51,7 +51,7 @@ const MovieDetails = () => {
                         </div>
                         <h3>{overview}</h3>
                         <div>Країни виробники:</div>
-                        <div>{production_countries && production_countries.map(country => country.name)}</div>
+                        <div>{production_countries && production_countries.map(country => country.name+', ')}</div>
                         <div className={"company_title"}>Компанії виробники:</div>
                         <div className={"companies"}>{production_companies && production_companies.map(company => <div
                             key={company.id}>{company.name} </div>)}</div>
