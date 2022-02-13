@@ -8,53 +8,31 @@
 
 :root {
     --main-blue: #70ACAD;
-
     --text-primary: snow;
-
     --main-cream: #F2EFC4;
-
-    --main-lightorange: #dcd686;
-
+    --main-background: #dcd686;
     --gold-price: gold;
-
     --red-price: #d22433;
-
     --red-page-hover: #ab3434;
-
     --red-page: red;
-
-    --header-blue: #4b8686;
-
-    --genre-true: #bcd7c2;
-
-    --genre-not-selected: #096365;
-
-    --text-black:black;
+    --light-blue: #4b8686;
+    --arctic-blue: #bcd7c2;
+    --ocean-blue: #096365;
+    --text-secondary: black;
 }
 
 
 [data-theme="dark"] {
     --main-blue: #014b4d;
-
     --text-primary: snow;
-
     --main-cream: #2d290b;
-
-    --main-lightorange: #0e0d02;
-
+    --main-background: #0e0d02;
     --gold-price: gold;
-
     --red-price: #d22433;
-
     --red-page-hover: #ab3434;
-
     --red-page: red;
-
-    --header-blue: #000000;
-
-    --genre-true: #a4a1a1;
-
-    --genre-not-selected: #9edee1;
-
-    --text-black:snow;
+    --light-blue: #000000;
+    --arctic-blue: #a4a1a1;
+    --ocean-blue: #9edee1;
+    --text-secondary: snow;
 }

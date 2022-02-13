@@ -21,7 +21,7 @@
 }
 
 .text div, .text h3, .overview, .titletext, .rating p, .tagline ,.release-date{
-    color: var(--text-black);
+    color: var(--text-secondary);
 }
 
 .text h3 {

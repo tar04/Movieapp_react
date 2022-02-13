@@ -1,12 +1,12 @@
 .movie {
     display: inline-block;
     max-width: 250px;
-    box-shadow: 5px 5px 5px 5px var(--main-lightorange);
+    box-shadow: 5px 5px 5px 5px var(--main-background);
     padding: 15px;
     position: relative;
     cursor: pointer;
     text-decoration: none;
-    color: var(--text-black);
+    color: var(--text-secondary);
 }
 
 .movie:hover::after {

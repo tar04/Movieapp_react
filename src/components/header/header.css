@@ -36,15 +36,15 @@
     align-items: center;
     column-gap: 10px;
     text-decoration: none;
-    color: var(--header-blue);
+    color: var(--light-blue);
 }
 
 .logo p {
     font-size: 26px;
     border-radius: 20px;
     opacity: 0.5;
-    background-color: var(--genre-true);
-    box-shadow: 8px 0 30px 30px var(--genre-true);
+    background-color: var(--arctic-blue);
+    box-shadow: 8px 0 30px 30px var(--arctic-blue);
 }
 .theme_switch img{
     width: 80px;
@@ -59,8 +59,8 @@
     position: absolute;
     left: 100%; top: 30%;
     background: var(--main-cream);
-    color: var(--text-black);
+    color: var(--text-secondary);
     font-size: 12px;
     padding: 5px 10px;
-    border: 1px solid var(--header-blue);
+    border: 1px solid var(--light-blue);
 }

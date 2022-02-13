@@ -12,7 +12,7 @@
     column-gap: 15px;
     justify-content: center;
     align-items: center;
-    color: var(--text-black);
+    color: var(--text-secondary);
 }
 
 .prev, .next {
@@ -42,5 +42,5 @@
 }
 
 .loading, .error{
-    color: var(--text-black);
+    color: var(--text-secondary);
 }
