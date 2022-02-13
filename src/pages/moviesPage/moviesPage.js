@@ -7,9 +7,9 @@ import "./moviesPage.css";
 const MoviesPage = () => {
 
     return (
-        <div className={'moviesPage'}>
-                <Header/>
-                <Outlet/>
+        <div className={"moviesPage"}>
+            <Header/>
+            <Outlet/>
         </div>
     );
 };

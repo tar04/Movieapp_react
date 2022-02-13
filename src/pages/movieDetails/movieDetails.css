@@ -20,7 +20,7 @@
     column-gap: 5px;
 }
 
-.text div, .text h3, .overview, .titletext, .rating p, .tagline ,.release-date{
+.text div, .text h3, .overview, .titletext, .rating p, .tagline, .release-date {
     color: var(--text-secondary);
 }
 

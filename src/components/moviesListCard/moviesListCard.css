@@ -41,7 +41,8 @@
     border-radius: 5px;
     background-color: var(--main-blue);
 }
-.ratings_low{
+
+.ratings_low {
     margin-left: 5px;
     padding: 4px;
     color: var(--red-price);

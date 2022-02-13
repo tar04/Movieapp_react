@@ -41,6 +41,6 @@
     font-size: 20px;
 }
 
-.loading, .error{
+.loading, .error {
     color: var(--text-secondary);
 }

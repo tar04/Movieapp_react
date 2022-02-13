@@ -1,6 +1,6 @@
 import {MoviesList} from "../moviesList/moviesList";
-import "./mainContent.css";
 import {Genres} from "../genres/genres";
+import "./mainContent.css";
 
 const MainContent = () => {
     return (

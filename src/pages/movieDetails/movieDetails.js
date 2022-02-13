@@ -10,16 +10,13 @@ const MovieDetails = () => {
 
     const {id} = useParams();
 
-
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getSingleMovie({id}))
-    }, [])
-
+        dispatch(getSingleMovie({id}));
+    }, []);
 
     const {singleMovie, statusMovie} = useSelector(state => state["movieReducer"]);
-
 
     const {
         poster_path,
@@ -34,32 +31,29 @@ const MovieDetails = () => {
         tagline
     } = singleMovie;
 
-
     return (
         <div className={"details"}>
-            {statusMovie === 'pending' && <h2>Loading...</h2>}
-            {statusMovie === 'rejected' ? <h3>Такого фільму не знайдено</h3> : (singleMovie && (
+            {statusMovie === "pending" && <h2>Loading...</h2>}
+            {statusMovie === "rejected" ? <h3>Такого фільму не знайдено</h3> : (singleMovie && (
                 <div className={"top_content"}>
-                    <img src={'https://image.tmdb.org/t/p/w500' + poster_path} alt=""/>
+                    <img src={"https://image.tmdb.org/t/p/w500" + poster_path}/>
                     <div className={"text"}>
                         <div><h1 className={"titletext"}>{title}</h1>{tagline &&
                         <h5 className={"tagline"}>({tagline})</h5>}<h4 className={"release-date"}>Дата виходу в
                             прокат: {release_date}</h4>
                         </div>
-                        <div className={"genres"}>Жанри: {genres && genres.map(genre => genre.name + ', ')}</div>
+                        <div className={"genres"}>Жанри: {genres && genres.map(genre => genre.name + ", ")}</div>
                         <div className={"rating"}>Рейтинг фільму(Tmdb):<p>{vote_average}/10</p>,
                             враховуючи {vote_count} голосів
                         </div>
                         <h3 className={"overview"}>{overview}</h3>
                         <div>Країни виробники:</div>
-                        <div>{production_countries && production_countries.map(country => country.name + ', ')}</div>
+                        <div>{production_countries && production_countries.map(country => country.name + ", ")}</div>
                         <div className={"company_title"}>Компанії виробники:</div>
                         <div className={"companies"}>{production_companies && production_companies.map(company => <div
                             key={company.id}>{company.name} </div>)}</div>
                     </div>
                 </div>))}
-
-
         </div>
     );
 };

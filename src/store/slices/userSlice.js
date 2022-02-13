@@ -1,12 +1,12 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-    username: '',
-    theme: ''
+    username: "",
+    theme: ""
 }
 
 let userSlice = createSlice({
-    name: 'userSlice',
+    name: "userSlice",
     initialState,
     reducers: {
         setUser: (state, action) => {

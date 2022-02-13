@@ -1,7 +1,8 @@
-import "./genre.css";
-import {useDispatch, useSelector} from "react-redux";
-import {addGenre, delGenre} from "../../store";
 import {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+
+import {addGenre, delGenre} from "../../store";
+import "./genre.css";
 
 const Genre = ({genre: {id, name}}) => {
 
@@ -13,11 +14,11 @@ const Genre = ({genre: {id, name}}) => {
 
     const send = () => {
         if (!genres.includes(id)) {
-            setStatus(!status)
+            setStatus(!status);
             dispatch(addGenre({id}));
 
         } else {
-            setStatus(!status)
+            setStatus(!status);
             dispatch(delGenre({id}));
         }
     }

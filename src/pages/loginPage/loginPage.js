@@ -4,8 +4,8 @@ import {useNavigate} from "react-router-dom";
 import {joiResolver} from "@hookform/resolvers/joi";
 
 import {setUser} from "../../store";
-import "./loginPage.css";
 import {userValidator} from "../../validators";
+import "./loginPage.css";
 
 const LoginPage = () => {
 
@@ -17,20 +17,19 @@ const LoginPage = () => {
 
     const navigate = useNavigate();
 
-
     const send = (data) => {
         dispatch(setUser({data}));
-        navigate('/movies');
+        navigate("/movies");
     }
 
     return (
         <div className={"login"}>
             <div className={"form"}>
-                <img src={require('./hello.png')} alt=""/>
-                <h2 className={'form_greeting'}>Вітаю у нашому клубі!</h2>
-                <h3 className={'form_greeting'}> Як ми можемо до Тебе звертатись?</h3>
-                <form onSubmit={handleSubmit(send)}><input type="text" {...register('username')}
-                                                           placeholder={'Введи своє ім\'я'}/>
+                <img src={require("./hello.png")} alt=""/>
+                <h2 className={"form_greeting"}>Вітаю у нашому клубі!</h2>
+                <h3 className={"form_greeting"}> Як ми можемо до Тебе звертатись?</h3>
+                <form onSubmit={handleSubmit(send)}><input type="text" {...register("username")}
+                                                           placeholder={"Введи своє ім'я"}/>
 
                     <button>Поїхали!</button>
                 </form>

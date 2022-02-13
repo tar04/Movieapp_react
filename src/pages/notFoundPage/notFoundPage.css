@@ -1,8 +1,9 @@
-.nfpage{
+.nfpage {
     background-image: url("./log-image.jpg");
     background-size: 100%;
     height: 100vh;
 }
-.nfpage div{
+
+.nfpage div {
     padding: 25% 0 0 5%;
 }

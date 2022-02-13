@@ -7,7 +7,7 @@ const NotFoundPage = () => {
         <div className={"nfpage"}>
             <div>
                 <h2>Такої сторінки не існує...</h2>
-                <Link to={'/'}>Повернутись до головної сторінки</Link>
+                <Link to={"/"}>Повернутись до головної сторінки</Link>
             </div>
         </div>
     );
