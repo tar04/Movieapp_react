@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
-import {firstPage, getMovies, lastPage, nextPage, prevPage} from "../../store";
+import {firstPage, getMovies, lastPage, nextPage, prevPage, resetPage} from "../../store";
 import {MoviesListCard} from "../moviesListCard/moviesListCard";
 import "./moviesList.css";
 
@@ -11,6 +11,11 @@ const MoviesList = () => {
 
 
     const {movies, error, status, page, pageCount, genres} = useSelector(state => state["movieReducer"]);
+
+    useEffect(() => {
+        dispatch(resetPage())
+    }, [])
+
     useEffect(() => {
         dispatch(getMovies({page, genres}));
         window.scrollTo(0, 0);

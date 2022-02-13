@@ -71,6 +71,10 @@ const movieSlice = createSlice({
             state.genres = state.genres.filter(genre => genre !== action.payload.id);
             state.page = 1;
         },
+        resetPage: (state) => {
+            state.genres = [];
+            state.page=1;
+        },
         changePageCount: (state, action) => {
             state.pageCount = action.payload;
             if (state.pageCount > 500) {
@@ -116,6 +120,7 @@ export const {
     lastPage,
     addGenre,
     delGenre,
-    changePageCount
+    changePageCount,
+    resetPage
 } = movieSlice.actions;
 export default movieReducer;
